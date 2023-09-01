@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>NavBar</title>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="section-1">
+                    <img src="https://flowbite.s3.amazonaws.com/logo.svg">
+                    <h1>Flowbite</h1>
+                </div>
+                <div class="section-2">
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="">Clients</a></li>
+                        <li><a href="">Marketing</a></li>
+                        <li><a href="">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="section-3">
+                    <button>
+                        <i class="bi bi-plus"></i>
+                        <a href="">Upgrade</a>
+                    </button>
+                    <div class="action_men">
+                        <div class="notificacion" onclick='menuToggleMen();'>
+                            <i class="bi bi-bell-fill icon"></i>
+                        </div>
+                        <div class="menu_men">
+                            <h3>NOTIFICATIONS</h3>
+                            <div class="bloque">
+                                <div class="noti"><img src="https://secrecyjewels.es/blog/wp-content/uploads/2022/10/esencia-de-una-persona.jpg" alt=""></img>
+                                    <aside>New message from <span class="resalt">Bonnie Green</span>: "Hey, what's up? All set for the presentation?"<br><a class="min">a few moments ago</a></aside></div>
+                                <div class="noti"><img src="https://i.pinimg.com/550x/46/79/92/4679929b194ea5ec61eb96e33a56f1fe.jpg" alt=""></img>
+                                    <aside><span class="resalt">Jese leos and 5 others</span> started following you. <br><a class="min">10 minutes ago</a></aside>
+                                </div>
+                                <div class="noti"><img src="https://www.lavanguardia.com/files/content_image_mobile_filter/uploads/2018/07/25/5fa43c9755611.jpeg" alt=""></img>
+                                    <aside><span class="resalt">Joseph Mcfall, Bonnie Green and 141 others</span>love your story. See it and view more stories.<br><a class="min">40 minutes ago</a></aside>
+                                </div> 
+                                <div class="noti"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2jIgvIPXJblV1h93nCXW4Jjgh-P2k28cmtA&usqp=CAU" alt=""></img>
+                                    <aside><span class="resalt">Leslie Livingston</span>mentioned you in a comment: <span class="resalt">@bonnie.green</span>what do you say?<br><a class="min">1 hour ago</a></aside>
+                                </div>
+                                <div class="noti"><img src="https://i0.wp.com/thehappening.com/wp-content/uploads/2017/07/foto-perfil-5.jpg?resize=1024%2C694&ssl=1" alt=""></img>
+                                    <aside><span class="resalt">Robert Brown</span>posted a new video: Glassmorphism - learn how to implement the new design trend. <br><a class="min">2 hours ago</a></aside>
+                                </div>
+                            </div>
+                            <h3><i class="bi bi-eye-fill"></i>View all</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="action_app">
+                        <div class="app" onclick='menuToggleApp();'>
+                            <i class="bi bi-grid-fill icon"></i>
+                        </div>
+                        <div class="menu_app">
+                            <h3>APPS</h3>
+                            <ul>
+                                <li><i class="bi bi-bag-heart-fill"></i><br><span class="app-text">Sales</span></li>
+                                <li><i class="bi bi-people-fill"></i><br><span class="app-text">Users</span></li>
+                                <li><i class="bi bi-inbox-fill"></i><br><span class="app-text">Inbox</span></li>
+                                <li><i class="bi bi-person-circle"></i><br><span class="app-text">Profile</span></li>
+                                <li><i class="bi bi-gear-fill"></i><br><span class="app-text">Setting</span></li>
+                                <li><i class="bi bi-archive-fill"></i><br><span class="app-text">Products</span></li>
+                                <li><i class="bi bi-cash-coin"></i><br><span class="app-text">Pricing</span></li>
+                                <li><i class="bi bi-receipt"></i><br><span class="app-text">Billing</span></li>
+                                <li><i class="bi bi-box-arrow-in-left"></i><br><span class="app-text">Logout</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="action">
+                        <div class="profile" onclick='menuToggle();'>
+                            <img src="https://flowbite.com/docs/images/people/profile-picture-5.jpg">
+                        </div>
+                        <div class="menu">
+                            <h3>Neil sims<br><span>name@flowbite.com</span></h3>
+                            <ul>
+                                <li>My profile</li>
+                                <li>Account setting</li>
+                                <li><i class="bi bi-heart-fill"></i><a href="#">My likes</a></li>
+                                <li><i class="bi bi-collection-fill"></i><a href="#">Collections</a></li>
+                                <li><i class="bi bi-fire"></i><a href="#">Pro version</a><i class="bi bi-chevron-right" ></i></li>
+                                <li><i class="bi bi-box-arrow-right"></i><a href="#">Sign out</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <script>
+                        function menuToggleMen() {
+                            const toggleMenuMen = document.querySelector('.menu_men');
+                            const toggleMenuApp = document.querySelector('.menu_app');
+                            const toggleMenuProfile = document.querySelector('.menu');
+                    
+                            if (toggleMenuMen.classList.contains('active')) {
+                                toggleMenuMen.classList.remove('active');
+                            } else {
+                                toggleMenuMen.classList.add('active');
+                                // Cierra los otros menús si están abiertos
+                                toggleMenuApp.classList.remove('active');
+                                toggleMenuProfile.classList.remove('active');
+                            }
+                        }
+                    
+                        function menuToggleApp() {
+                            const toggleMenuMen = document.querySelector('.menu_men');
+                            const toggleMenuApp = document.querySelector('.menu_app');
+                            const toggleMenuProfile = document.querySelector('.menu');
+                    
+                            if (toggleMenuApp.classList.contains('active')) {
+                                toggleMenuApp.classList.remove('active');
+                            } else {
+                                toggleMenuApp.classList.add('active');
+                                // Cierra los otros menús si están abiertos
+                                toggleMenuMen.classList.remove('active');
+                                toggleMenuProfile.classList.remove('active');
+                            }
+                        }
+                    
+                        function menuToggle() {
+                            const toggleMenuMen = document.querySelector('.menu_men');
+                            const toggleMenuApp = document.querySelector('.menu_app');
+                            const toggleMenuProfile = document.querySelector('.menu');
+                    
+                            if (toggleMenuProfile.classList.contains('active')) {
+                                toggleMenuProfile.classList.remove('active');
+                            } else {
+                                toggleMenuProfile.classList.add('active');
+                                // Cierra los otros menús si están abiertos
+                                toggleMenuMen.classList.remove('active');
+                                toggleMenuApp.classList.remove('active');
+                            }
+                        }
+                    </script>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <div class="container">
+                <div class="section-1">
+                    <ul id="menu">
+                        <li><a href="">Projects</a></li>
+                        <li><a href="">Sales</a></li>
+                        <li><a href="">Team</a></li>
+                        <li><a href="">Workspaces</a></li>
+                        <li><a href="">Tasks</a></li>
+                        <li><a href="">Analytics</a></li>
+                    </ul>
+                </div>
+                <div class="section-2">
+                    <input type="search" placeholder="🔍 Find anything">
+                    <i class="bi bi-search"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+</body>
+</html>
